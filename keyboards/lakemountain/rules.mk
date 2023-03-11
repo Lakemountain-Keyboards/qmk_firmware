@@ -1,23 +1,30 @@
-SPLIT_KEYBOARD = yes
+SPLIT_KEYBOARD = no
 SPLIT_HAND_PIN = C14
-
-ENCODER_ENABLE = no
-
-AUDIO_ENABLE = yes
-AUDIO_DRIVER = pwm_hardware
 
 SERIAL_DRIVER = usart
 
+ENCODER_ENABLE = no
+
+AUDIO_ENABLE = no
+AUDIO_DRIVER = pwm_hardware
+
 BACKLIGHT_ENABLE = no
 RGBLIGHT_ENABLE = no
-WS2812_DRIVER = pwm
+RGB_MATRIX_ENABLE = yes
+RGB_MATRIX_DRIVER = WS2812
+WS2812_DRIVER = bitbang
 
-EEPROM_DRIVER = spi
+# EEPROM_DRIVER = spi
+
+POINTING_DEVICE_ENABLE = yes
+POINTING_DEVICE_DRIVER = cirque_pinnacle_spi
+# POINTING_DEVICE_DRIVER = pmw3360
 
 MCU = STM32F411
 BOOTLOADER = stm32-dfu
 
 AUTOCORRECT_ENABLE = no
+NKRO_ENABLE = yes
 
 CUSTOM_BOOTMAGIC_ENABLE = no
 CUSTOM_UNICODE_ENABLE = no
@@ -30,3 +37,12 @@ SWAP_HANDS_ENABLE = no
 TAP_DANCE_ENABLE = no
 
 WPM_ENABLE = no
+
+CONSOLE_ENABLE = no        # Console for debug
+COMMAND_ENABLE = no        # Commands for debug and configuration
+
+# Enter lower-power sleep mode when on the ChibiOS idle thread
+# OPT_DEFS += -DCORTEX_ENABLE_WFI_IDLE=TRUE
+
+VIA_ENABLE = yes
+LTO_ENABLE = yes
